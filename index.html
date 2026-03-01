@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO META -->
+  <!-- SEO -->
   <title>Minden ami öntözés és kert karbantartás | Öntözőrendszer Nyíregyháza</title>
   <meta name="description" content="Automata öntözőrendszer tervezés és kivitelezés, mezőgazdasági öntözés, kert karbantartás (fűnyírás, metszés, kaszálás), téliesítés és tavaszi beüzemelés Nyíregyházán és környékén. Kiszállással más városokba is." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#2e7d32" />
 
-  <!-- (OPCIONÁLIS) Megosztás előnézet: ha később lesz saját előnézeti képed, ide beírjuk -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- (OPCIONÁLIS) Megosztás előnézet -->
   <meta property="og:title" content="Minden ami öntözés és kert karbantartás" />
   <meta property="og:description" content="Öntözőrendszer telepítés, kert karbantartás, téliesítés Nyíregyházán és környékén." />
   <meta property="og:type" content="website" />
@@ -176,7 +179,7 @@
       transform: scale(1.07);
     }
 
-    /* Finom pulzálás, hogy észrevehető legyen */
+    /* Finom pulzálás */
     .floating-call::after{
       content:"";
       position:absolute;
@@ -300,10 +303,11 @@
 
   <div class="gallery">
     <img src="munka1.jpg" alt="Referencia munka 1" class="gallery-img">
-    <img src="munka2.jpg" alt="Referencia munka 2" class="gallery-img">
+    <!-- Ha még töltesz fel képet: csak másold ezt a sort és írd át a fájlnevet -->
+    <!-- <img src="munka2.jpg" alt="Referencia munka 2" class="gallery-img"> -->
   </div>
 
-  <!-- Lightbox / Nagyító -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Bezárás">×</button>
     <img id="lightboxImg" src="" alt="Nagyított kép">
@@ -400,12 +404,10 @@
 
   closeBtn.addEventListener('click', closeLightbox);
 
-  // kattintás háttérre bezár
   lightbox.addEventListener('click', (e) => {
     if(e.target === lightbox) closeLightbox();
   });
 
-  // ESC bezár
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
   });
