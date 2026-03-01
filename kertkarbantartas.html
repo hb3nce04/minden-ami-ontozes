@@ -1,290 +1,115 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kertkarbantartás – Minden ami öntözés és kert karbantartás</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kertkarbantartás | Nyíregyháza és környéke</title>
+<meta name="description" content="Kertkarbantartás Nyíregyházán és környékén: fűnyírás, metszés, kaszálás, szezonális gondozás. Czinke Attila e.v.">
 
-  <!-- SEO -->
-  <meta name="description" content="Kertkarbantartás Nyíregyházán és környékén: fűnyírás, metszés, kaszálás, gondozás. Legó zöldfal építését és karbantartását is vállaljuk. Czinke Attila e.v." />
-  <meta name="robots" content="index, follow" />
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BV7B910S44"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BV7B910S44');
+</script>
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      margin:0;
-      background:#f5f5f5;
-    }
+<link rel="icon" href="favicon.ico">
 
-    header{
-      background:#1f3d1f;
-      color:white;
-      padding:20px;
-      text-align:center;
-    }
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;}
+header{background:#1f3d1f;color:white;padding:20px;text-align:center;}
+header img{max-width:200px;display:block;margin:0 auto 10px;}
+nav{background:#2e7d32;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:white;padding:15px 20px;text-decoration:none;font-weight:bold;}
+nav a:hover{background:#1b5e20;}
 
-    header img{
-      max-width:200px;
-      display:block;
-      margin:0 auto 10px;
-    }
+.hero{padding:50px 20px;text-align:center;background:white;}
+.hero h1{color:#2e7d32;margin:0 0 10px;}
+.hero p{margin:0 0 20px;}
 
-    nav{
-      background:#2e7d32;
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+.button{
+display:inline-block;
+padding:14px 24px;
+background:#2e7d32;
+color:white;
+border-radius:6px;
+text-decoration:none;
+margin:10px;
+font-weight:bold;
+}
+.button:hover{background:#1b5e20;}
 
-    nav a{
-      color:white;
-      padding:15px 20px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    nav a:hover{ background:#1b5e20; }
-
-    .hero{
-      padding:40px 20px;
-      text-align:center;
-      background:white;
-    }
-
-    .hero h1{ color:#2e7d32; margin-top:0; }
-
-    .button{
-      display:inline-block;
-      padding:12px 20px;
-      background:#2e7d32;
-      color:white;
-      border-radius:6px;
-      text-decoration:none;
-      margin:10px;
-      border:none;
-      cursor:pointer;
-    }
-
-    .section{
-      padding:40px 20px;
-      max-width:1100px;
-      margin:auto;
-    }
-
-    .card{
-      background:white;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .highlight{
-      border-left:6px solid #2e7d32;
-      background: #ffffff;
-    }
-
-    .highlight h2{
-      margin-top:0;
-      color:#2e7d32;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
-      margin-top:15px;
-    }
-
-    .gallery a{
-      display:block;
-      text-decoration:none;
-    }
-
-    .gallery img{
-      width:100%;
-      border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.12);
-      transition:transform .15s ease;
-      cursor:zoom-in;
-    }
-
-    .gallery img:hover{ transform:scale(1.01); }
-
-    footer{
-      background:#1f3d1f;
-      color:white;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-
-    /* Lightbox */
-    .lb{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.85);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      padding:20px;
-    }
-
-    .lb.open{ display:flex; }
-
-    .lb img{
-      max-width:min(1100px, 95vw);
-      max-height:90vh;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-
-    .lb .close{
-      position:absolute;
-      top:14px;
-      right:14px;
-      background:#ffffff;
-      border:none;
-      border-radius:999px;
-      padding:10px 14px;
-      font-weight:bold;
-      cursor:pointer;
-    }
-
-    .small{
-      color:#555;
-      margin-top:8px;
-      font-size:14px;
-    }
-  </style>
+.section{padding:50px 20px;max-width:1100px;margin:auto;}
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+footer{background:#1f3d1f;color:white;text-align:center;padding:20px;margin-top:40px;}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="Minden ami öntözés és kert karbantartás logó">
-  <h2>Minden ami öntözés és kert karbantartás</h2>
-  <p>Czinke Attila</p>
+<img src="logo.png" alt="Minden ami öntözés logó">
+<h2>Minden ami öntözés és kert karbantartás</h2>
+<p>Czinke Attila e.v.</p>
 </header>
 
 <nav>
-  <a href="index.html">Főoldal</a>
-  <a href="ontozorendszer.html">Öntözőrendszer</a>
-  <a href="kertkarbantartas.html">Kertkarbantartás</a>
-  <a href="index.html#idopont">Időpont kérés</a>
-  <a href="index.html#kapcsolat">Kapcsolat</a>
+<a href="index.html">Főoldal</a>
+<a href="ontozorendszer.html">Öntözőrendszer</a>
+<a href="kertkarbantartas.html">Kertkarbantartás</a>
+<a href="zoldfal.html">Zöldfal</a>
 </nav>
 
 <section class="hero">
-  <h1>Kertkarbantartás</h1>
-  <p>Nyíregyházán és környékén – fűnyírás, metszés, kaszálás, gondozás.</p>
-  <a class="button" href="tel:+36501267123">Hívás most</a>
-  <a class="button" href="index.html#idopont">Időpont kérés</a>
+<h1>Kertkarbantartás</h1>
+<p>Nyíregyházán és környékén, kiszállással.</p>
+
+<a class="button" href="tel:+36501267123">Hívás most</a>
+<a class="button" href="mailto:czinke.attila79@gmail.com">Email küldése</a>
 </section>
 
 <section class="section">
-  <div class="grid">
-    <div class="card">
-      <h2>Mit vállalunk?</h2>
-      <ul>
-        <li>Fűnyírás, kaszálás</li>
-        <li>Sövény- és bokormetszés</li>
-        <li>Kert rendezés, ápolás</li>
-        <li>Szezonális munkák</li>
-      </ul>
-      <p class="small">Ha van fotód a kertről, küldd el üzenetben, és gyorsabban adunk ajánlatot.</p>
-    </div>
 
-    <!-- KIEMELÉS: Légö zöldfal -->
-    <div class="card highlight">
-      <h2>Légö zöldfal</h2>
-      <p><b>Zöldfal építését és karbantartását is vállaljuk.</b></p>
+<div class="card">
+<h2>Szolgáltatásaink</h2>
+<ul style="line-height:1.9; margin:0; padding-left:18px;">
+  <li>Fűnyírás</li>
+  <li>Metszés</li>
+  <li>Kaszálás</li>
+  <li>Szezonális kertgondozás</li>
+  <li>Általános kert rendbetétel</li>
+</ul>
 
-      <div class="gallery">
-        <!-- 1 -->
-        <a href="assets/kert/zoldfal-01.webp" class="lb-link" data-full-jpg="assets/kert/zoldfal-01.jpg" aria-label="Zöldfal kép 1">
-          <picture>
-            <source srcset="assets/kert/thumbs/zoldfal-01.webp" type="image/webp">
-            <img src="assets/kert/thumbs/zoldfal-01.jpg" alt="Légö zöldfal – referencia 1" loading="lazy">
-          </picture>
-        </a>
+<p style="margin-top:18px;">
+A zöldfal szolgáltatás külön oldalon érhető el: <a href="zoldfal.html"><strong>Legő zöldfal</strong></a>.
+</p>
+</div>
 
-        <!-- 2 -->
-        <a href="assets/kert/zoldfal-02.webp" class="lb-link" data-full-jpg="assets/kert/zoldfal-02.jpg" aria-label="Zöldfal kép 2">
-          <picture>
-            <source srcset="assets/kert/thumbs/zoldfal-02.webp" type="image/webp">
-            <img src="assets/kert/thumbs/zoldfal-02.jpg" alt="Légö zöldfal – referencia 2" loading="lazy">
-          </picture>
-        </a>
-      </div>
+<div class="card">
+<h2>Kapcsolat</h2>
+<p><strong>Név:</strong> Czinke Attila e.v.</p>
+<p><strong>Email:</strong> <a href="mailto:czinke.attila79@gmail.com">czinke.attila79@gmail.com</a></p>
+<p><strong>Telefon:</strong>
+  <a href="tel:+36501267123">+36 50 126 7123</a> |
+  <a href="tel:+36306850053">+36 30 685 0053</a>
+</p>
+<p><strong>Székhely:</strong> 4400 Nyíregyháza, Fazekas János tér 10 10/82</p>
+<p><strong>Terület:</strong> Nyíregyháza és környéke</p>
+</div>
 
-      <p class="small">Kattints a képekre a nagyításhoz.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="card">
-    <h2>Kapcsolat (gyors)</h2>
-    <p><b>Czinke Attila e.v.</b></p>
-    <p><b>E-mail:</b> <a href="mailto:czinke.attila79@gmail.com">czinke.attila79@gmail.com</a></p>
-    <p><b>Telefon:</b>
-      <a href="tel:+36501267123">+36 50 126 7123</a> |
-      <a href="tel:+36306850053">+36 30 685 0053</a>
-    </p>
-    <p><b>Székhely:</b> Fazekas János tér 10 10/82</p>
-    <p><b>Működési terület:</b> Nyíregyháza és környéke</p>
-  </div>
 </section>
 
 <footer>
-  © 2026 Minden ami öntözés és kert karbantartás
+© 2026 Minden ami öntözés és kert karbantartás | Kertkarbantartás
 </footer>
-
-<!-- Lightbox -->
-<div class="lb" id="lb" aria-hidden="true">
-  <button class="close" id="lbClose" aria-label="Bezárás">✕</button>
-  <img id="lbImg" alt="Nagyított kép">
-</div>
-
-<script>
-  const lb = document.getElementById('lb');
-  const lbImg = document.getElementById('lbImg');
-  const lbClose = document.getElementById('lbClose');
-
-  function openLb(src) {
-    lbImg.src = src;
-    lb.classList.add('open');
-    lb.setAttribute('aria-hidden', 'false');
-  }
-
-  function closeLb() {
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden', 'true');
-    lbImg.src = '';
-  }
-
-  document.querySelectorAll('.lb-link').forEach(a => {
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      // WebP a href-ben, JPG fallback data attribútumban
-      const webp = a.getAttribute('href');
-      const jpg = a.getAttribute('data-full-jpg');
-      // Ha valamiért nem menne a webp a böngészőn, legyen jpg
-      openLb(webp || jpg);
-    });
-  });
-
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
-</script>
 
 </body>
 </html>
