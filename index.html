@@ -1,199 +1,249 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minden ami öntözés és kert karbantartás</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-  body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f5f5f5;
-  }
+  <!-- SEO META -->
+  <title>Minden ami öntözés és kert karbantartás | Öntözőrendszer Nyíregyháza</title>
+  <meta name="description" content="Automata öntözőrendszer tervezés és kivitelezés, mezőgazdasági öntözés, kert karbantartás (fűnyírás, metszés, kaszálás), téliesítés és tavaszi beüzemelés Nyíregyházán és környékén. Kiszállással más városokba is." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2e7d32" />
 
-  header{
-    background:#1f3d1f;
-    color:white;
-    padding:20px;
-    text-align:center;
-  }
+  <!-- (OPCIONÁLIS) Megosztás előnézet: ha később lesz saját előnézeti képed, ide beírjuk -->
+  <meta property="og:title" content="Minden ami öntözés és kert karbantartás" />
+  <meta property="og:description" content="Öntözőrendszer telepítés, kert karbantartás, téliesítés Nyíregyházán és környékén." />
+  <meta property="og:type" content="website" />
 
-  header img{
-    max-width:220px;
-    width: 100%;
-    height:auto;
-    display:block;
-    margin:0 auto 10px;
-  }
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      background:#f5f5f5;
+    }
 
-  nav{
-    background:#2e7d32;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
+    header{
+      background:#1f3d1f;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
 
-  nav a{
-    color:white;
-    padding:15px 20px;
-    text-decoration:none;
-    font-weight:bold;
-  }
+    header img{
+      max-width:220px;
+      width: 100%;
+      height:auto;
+      display:block;
+      margin:0 auto 10px;
+    }
 
-  nav a:hover{
-    background:#1b5e20;
-  }
+    nav{
+      background:#2e7d32;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-  .hero{
-    padding:40px 20px;
-    text-align:center;
-    background:white;
-  }
+    nav a{
+      color:white;
+      padding:15px 20px;
+      text-decoration:none;
+      font-weight:bold;
+    }
 
-  .hero h1{
-    color:#2e7d32;
-    margin-top: 0;
-  }
+    nav a:hover{
+      background:#1b5e20;
+    }
 
-  .button{
-    display:inline-block;
-    padding:12px 20px;
-    background:#2e7d32;
-    color:white;
-    border-radius:8px;
-    text-decoration:none;
-    margin:10px;
-    border:none;
-    cursor:pointer;
-    font-weight: bold;
-    transition: transform .15s ease, background .15s ease;
-  }
+    .hero{
+      padding:40px 20px;
+      text-align:center;
+      background:white;
+    }
 
-  .button:hover{
-    background:#1b5e20;
-    transform: translateY(-1px);
-  }
+    .hero h1{
+      color:#2e7d32;
+      margin-top: 0;
+    }
 
-  .section{
-    padding:40px 20px;
-    max-width:1100px;
-    margin:auto;
-  }
+    .button{
+      display:inline-block;
+      padding:12px 20px;
+      background:#2e7d32;
+      color:white;
+      border-radius:8px;
+      text-decoration:none;
+      margin:10px;
+      border:none;
+      cursor:pointer;
+      font-weight: bold;
+      transition: transform .15s ease, background .15s ease;
+    }
 
-  .services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-  }
+    .button:hover{
+      background:#1b5e20;
+      transform: translateY(-1px);
+    }
 
-  .card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  }
+    .section{
+      padding:40px 20px;
+      max-width:1100px;
+      margin:auto;
+    }
 
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-  }
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
 
-  .gallery img{
-    width:100%;
-    border-radius:12px;
-    display:block;
-    transition: transform .2s ease;
-  }
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
 
-  .gallery img:hover{
-    transform: scale(1.02);
-  }
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+    }
 
-  .contact{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.06);
-  }
+    .gallery img{
+      width:100%;
+      border-radius:12px;
+      display:block;
+      transition: transform .2s ease;
+    }
 
-  input, textarea{
-    width:100%;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    box-sizing: border-box;
-  }
+    .gallery img:hover{
+      transform: scale(1.02);
+    }
 
-  footer{
-    background:#1f3d1f;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-  }
+    .gallery-img{
+      cursor: zoom-in;
+    }
 
-  /* Lebegő hívás gomb */
-  .floating-call{
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    background: #2e7d32;
-    color: white;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size: 30px;
-    text-decoration:none;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    z-index: 9999;
-    transition: transform .15s ease, background .15s ease;
-  }
+    .contact{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    }
 
-  .floating-call:hover{
-    background:#1b5e20;
-    transform: scale(1.07);
-  }
+    input, textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-  /* Finom pulzálás, hogy észrevehető legyen */
-  .floating-call::after{
-    content:"";
-    position:absolute;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(46,125,50,0.35);
-    animation: pulse 1.6s infinite;
-    z-index:-1;
-  }
+    footer{
+      background:#1f3d1f;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
 
-  @keyframes pulse{
-    0%{ transform: scale(1); opacity: .7; }
-    70%{ transform: scale(1.6); opacity: 0; }
-    100%{ transform: scale(1.6); opacity: 0; }
-  }
-
-  /* Mobilon kicsit kisebb a lebegő gomb */
-  @media (max-width: 480px){
+    /* Lebegő hívás gomb */
     .floating-call{
-      width: 58px;
-      height: 58px;
-      font-size: 28px;
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background: #2e7d32;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size: 30px;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform .15s ease, background .15s ease;
     }
-    .floating-call::after{
-      width: 58px;
-      height: 58px;
-    }
-  }
-</style>
 
+    .floating-call:hover{
+      background:#1b5e20;
+      transform: scale(1.07);
+    }
+
+    /* Finom pulzálás, hogy észrevehető legyen */
+    .floating-call::after{
+      content:"";
+      position:absolute;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(46,125,50,0.35);
+      animation: pulse 1.6s infinite;
+      z-index:-1;
+    }
+
+    @keyframes pulse{
+      0%{ transform: scale(1); opacity: .7; }
+      70%{ transform: scale(1.6); opacity: 0; }
+      100%{ transform: scale(1.6); opacity: 0; }
+    }
+
+    @media (max-width: 480px){
+      .floating-call{
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+      }
+      .floating-call::after{
+        width: 58px;
+        height: 58px;
+      }
+    }
+
+    /* Lightbox / Nagyító */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 10000;
+    }
+
+    .lightbox.open{
+      display: flex;
+    }
+
+    .lightbox img{
+      max-width: 95vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 10px;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
@@ -249,8 +299,14 @@
   <h2>Referencia munkák</h2>
 
   <div class="gallery">
-    <img src="munka1.jpg" alt="Referencia munka 1">
-    <img src="munka2.jpg" alt="Referencia munka 2">
+    <img src="munka1.jpg" alt="Referencia munka 1" class="gallery-img">
+    <img src="munka2.jpg" alt="Referencia munka 2" class="gallery-img">
+  </div>
+
+  <!-- Lightbox / Nagyító -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Bezárás">×</button>
+    <img id="lightboxImg" src="" alt="Nagyított kép">
   </div>
 </section>
 
@@ -315,6 +371,45 @@
 <a href="tel:+36501267123" class="floating-call" aria-label="Hívás">
   📞
 </a>
+
+<!-- Lightbox JS -->
+<script>
+  const imgs = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Nagyított kép';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // kattintás háttérre bezár
+  lightbox.addEventListener('click', (e) => {
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  // ESC bezár
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+  });
+</script>
 
 </body>
 </html>
