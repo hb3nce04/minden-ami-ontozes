@@ -4,14 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- SEO -->
 <title>Öntözőrendszer Nyíregyháza | Kertkarbantartás | Czinke Attila e.v.</title>
 <meta name="description" content="Öntözőrendszer telepítés, kertkarbantartás, mezőgazdasági öntözés, téliesítés Nyíregyházán és környékén. Czinke Attila e.v.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#2e7d32">
 
+<!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-<!-- ERŐS LOCAL SEO STRUKTURÁLT ADAT -->
+<!-- Teljesítmény: gyorsabb kapcsolat-felépítés külső szolgáltatókhoz -->
+<link rel="preconnect" href="https://formsubmit.co">
+<link rel="preconnect" href="https://www.google.com">
+<link rel="preconnect" href="https://maps.google.com">
+
+<!-- Teljesítmény: logo előtöltés -->
+<link rel="preload" as="image" href="logo.png" fetchpriority="high">
+
+<!-- LocalBusiness strukturált adat -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,197 +52,185 @@
 </script>
 
 <style>
-body{font-family:Arial;margin:0;background:#f5f5f5;}
+  body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#f5f5f5;}
+  header{background:#1f3d1f;color:white;padding:20px;text-align:center;}
+  header img{max-width:220px;width:100%;height:auto;margin:auto;display:block;}
+  nav{background:#2e7d32;display:flex;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
+  nav a{color:white;padding:15px 20px;text-decoration:none;font-weight:bold;}
+  nav a:hover{background:#1b5e20;}
+  .hero{padding:40px 20px;text-align:center;background:white;}
+  .hero h1{color:#2e7d32;margin-top:0;}
+  .button{display:inline-block;padding:12px 20px;background:#2e7d32;color:white;border-radius:8px;text-decoration:none;margin:10px;font-weight:bold;transition:.2s;border:none;cursor:pointer;}
+  .button:hover{background:#1b5e20;transform:translateY(-1px);}
+  .section{padding:40px 20px;max-width:1100px;margin:auto;}
 
-header{background:#1f3d1f;color:white;padding:20px;text-align:center;}
-header img{max-width:220px;width:100%;margin:auto;display:block;}
+  /* Teljesítmény: késleltetett renderelés (Chrome) */
+  .section, footer{
+    content-visibility:auto;
+    contain-intrinsic-size: 600px;
+  }
 
-nav{background:#2e7d32;display:flex;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
-nav a{color:white;padding:15px 20px;text-decoration:none;font-weight:bold;}
-nav a:hover{background:#1b5e20;}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+  .gallery img{width:100%;border-radius:12px;cursor:zoom-in;display:block;}
+  .contact{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
+  input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;box-sizing:border-box;}
+  footer{background:#1f3d1f;color:white;text-align:center;padding:20px;margin-top:40px;}
 
-.hero{padding:40px 20px;text-align:center;background:white;}
-.hero h1{color:#2e7d32;margin-top:0;}
+  /* Lebegő telefon */
+  .floating-call{
+    position:fixed;bottom:18px;right:18px;background:#2e7d32;color:white;
+    width:64px;height:64px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:30px;text-decoration:none;z-index:9999;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    animation:pulse 1.6s infinite;
+  }
+  .floating-call:hover{background:#1b5e20;transform:scale(1.06);}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(46,125,50,.55);}
+    70%{box-shadow:0 0 0 18px rgba(46,125,50,0);}
+    100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}
+  }
+  @media (max-width:480px){
+    .floating-call{width:58px;height:58px;font-size:28px;}
+  }
 
-.button{
-display:inline-block;
-padding:12px 20px;
-background:#2e7d32;
-color:white;
-border-radius:8px;
-text-decoration:none;
-margin:10px;
-font-weight:bold;
-transition:0.2s;
-}
-.button:hover{background:#1b5e20;}
-
-.section{padding:40px 20px;max-width:1100px;margin:auto;}
-
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
-.gallery img{width:100%;border-radius:12px;cursor:zoom-in;}
-
-.contact{background:white;padding:20px;border-radius:12px;}
-
-input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;}
-
-footer{background:#1f3d1f;color:white;text-align:center;padding:20px;margin-top:40px;}
-
-.floating-call{
-position:fixed;
-bottom:18px;
-right:18px;
-background:#2e7d32;
-color:white;
-width:64px;
-height:64px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-animation:pulse 1.6s infinite;
-}
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(46,125,50,.6);}
-70%{box-shadow:0 0 0 20px rgba(46,125,50,0);}
-100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}
-}
-
-.lightbox{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.85);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:10000;
-}
-.lightbox.open{display:flex;}
-.lightbox img{max-width:95vw;max-height:85vh;border-radius:12px;}
-.lightbox-close{
-position:absolute;
-top:15px;
-right:20px;
-font-size:30px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
-}
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:10000;padding:20px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:95vw;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+  .lightbox-close{position:absolute;top:14px;right:18px;width:44px;height:44px;border:none;border-radius:10px;font-size:30px;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;}
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" alt="Logo">
-<h2>Czinke Attila e.v.</h2>
-<p>Öntözőrendszer telepítés és kertkarbantartás</p>
+  <img src="logo.png" alt="Logo" width="220" height="220" decoding="async">
+  <h2>Czinke Attila e.v.</h2>
+  <p>Öntözőrendszer telepítés és kertkarbantartás</p>
 </header>
 
 <nav>
-<a href="#szolgaltatas">Szolgáltatások</a>
-<a href="#galeria">Galéria</a>
-<a href="#idopont">Időpont kérés</a>
-<a href="#kapcsolat">Kapcsolat</a>
+  <a href="#szolgaltatas">Szolgáltatások</a>
+  <a href="#galeria">Galéria</a>
+  <a href="#idopont">Időpont kérés</a>
+  <a href="#kapcsolat">Kapcsolat</a>
 </nav>
 
 <section class="hero">
-<h1>Öntözőrendszer Nyíregyházán és környékén</h1>
-<p>Professzionális kertkarbantartás és mezőgazdasági öntözés.</p>
-<a class="button" href="tel:+36501267123">Hívás most</a>
-<a class="button" href="#idopont">Időpont kérés</a>
+  <h1>Öntözőrendszer Nyíregyházán és környékén</h1>
+  <p>Professzionális kertkarbantartás és mezőgazdasági öntözés.</p>
+  <a class="button" href="tel:+36501267123">Hívás most</a>
+  <a class="button" href="#idopont">Időpont kérés</a>
 </section>
 
 <section id="szolgaltatas" class="section">
-<h2>Szolgáltatások</h2>
-<div class="services">
-<div class="card"><h3>Automata öntözőrendszer</h3><p>Teljes tervezés és kivitelezés.</p></div>
-<div class="card"><h3>Kertkarbantartás</h3><p>Fűnyírás, metszés, kaszálás.</p></div>
-<div class="card"><h3>Mezőgazdasági öntözés</h3><p>Professzionális megoldások.</p></div>
-<div class="card"><h3>Téliesítés</h3><p>Őszi leállítás, tavaszi indítás.</p></div>
-</div>
+  <h2>Szolgáltatások</h2>
+  <div class="services">
+    <div class="card"><h3>Automata öntözőrendszer</h3><p>Teljes tervezés és kivitelezés.</p></div>
+    <div class="card"><h3>Kertkarbantartás</h3><p>Fűnyírás, metszés, kaszálás.</p></div>
+    <div class="card"><h3>Mezőgazdasági öntözés</h3><p>Professzionális megoldások.</p></div>
+    <div class="card"><h3>Téliesítés</h3><p>Őszi leállítás, tavaszi indítás.</p></div>
+  </div>
 </section>
 
 <section id="galeria" class="section">
-<h2>Referencia munkák</h2>
-<div class="gallery">
-<img src="munka1.jpg" class="gallery-img">
-</div>
+  <h2>Referencia munkák</h2>
 
-<div id="lightbox" class="lightbox">
-<button class="lightbox-close">×</button>
-<img id="lightboxImg">
-</div>
+  <div class="gallery">
+    <img src="munka1.jpg" alt="Referencia munka 1" class="gallery-img" loading="lazy" decoding="async" width="1200" height="675">
+    <!-- Ha feltöltesz még: -->
+    <!-- <img src="munka2.jpg" alt="Referencia munka 2" class="gallery-img" loading="lazy" decoding="async" width="1200" height="675"> -->
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Bezárás">×</button>
+    <img id="lightboxImg" src="" alt="Nagyított kép">
+  </div>
 </section>
 
 <section id="idopont" class="section">
-<h2>Időpont kérés</h2>
-<div class="contact">
-<form action="https://formsubmit.co/czinke.attila.ada@gmail.com" method="POST">
-<input type="hidden" name="_cc" value="czinke.attila79@gmail.com">
-<input type="hidden" name="_subject" value="Új időpontkérés a weboldalról">
-<input type="hidden" name="_next" value="https://slendydubbiz.github.io/minden-ami-ontozes/koszonom.html">
-<input type="hidden" name="_captcha" value="false">
-<input type="text" name="_honey" style="display:none">
+  <h2>Időpont kérés</h2>
+  <div class="contact">
+    <form action="https://formsubmit.co/czinke.attila.ada@gmail.com" method="POST">
+      <input type="hidden" name="_cc" value="czinke.attila79@gmail.com">
+      <input type="hidden" name="_subject" value="Új időpontkérés a weboldalról">
+      <input type="hidden" name="_next" value="https://slendydubbiz.github.io/minden-ami-ontozes/koszonom.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
 
-<label>Név:</label><br>
-<input type="text" name="Név" required><br><br>
+      <label>Név:</label><br>
+      <input type="text" name="Név" required><br><br>
 
-<label>E-mail:</label><br>
-<input type="email" name="Email" required><br><br>
+      <label>E-mail:</label><br>
+      <input type="email" name="Email" required><br><br>
 
-<label>Telefonszám:</label><br>
-<input type="text" name="Telefon" required><br><br>
+      <label>Telefonszám:</label><br>
+      <input type="text" name="Telefon" required><br><br>
 
-<label>Üzenet:</label><br>
-<textarea name="Üzenet" rows="4" required></textarea><br><br>
+      <label>Üzenet:</label><br>
+      <textarea name="Üzenet" rows="4" required></textarea><br><br>
 
-<button class="button" type="submit">Küldés</button>
-</form>
-</div>
+      <button class="button" type="submit">Küldés</button>
+    </form>
+  </div>
 </section>
 
 <section id="kapcsolat" class="section">
-<h2>Kapcsolat</h2>
-<p><b>Név:</b> Czinke Attila e.v.</p>
-<p><b>Telefon:</b> <a href="tel:+36501267123">+36 50 126 7123</a></p>
-<p><b>E-mail:</b> <a href="mailto:czinke.attila79@gmail.com">czinke.attila79@gmail.com</a></p>
-<p><b>Székhely:</b> Fazekas János tér 10 10/82, Nyíregyháza</p>
-<p><b>Működési terület:</b> Nyíregyháza és környéke</p>
+  <h2>Kapcsolat</h2>
+  <p><b>Név:</b> Czinke Attila e.v.</p>
+  <p><b>Telefon:</b> <a href="tel:+36501267123">+36 50 126 7123</a> | <a href="tel:+36306850053">+36 30 685 0053</a></p>
+  <p><b>E-mail:</b> <a href="mailto:czinke.attila79@gmail.com">czinke.attila79@gmail.com</a></p>
+  <p><b>Székhely:</b> Fazekas János tér 10 10/82, Nyíregyháza</p>
+  <p><b>Működési terület:</b> Nyíregyháza és környéke</p>
 
-<h3>Térkép</h3>
-<iframe src="https://www.google.com/maps?q=Ny%C3%ADregyh%C3%A1za&output=embed"
-width="100%" height="350" style="border:0;border-radius:12px;" loading="lazy"></iframe>
+  <h3>Térkép</h3>
+  <iframe
+    src="https://www.google.com/maps?q=Ny%C3%ADregyh%C3%A1za&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;border-radius:12px;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Nyíregyháza térkép">
+  </iframe>
 </section>
 
 <footer>
-© 2026 Czinke Attila e.v.
+  © 2026 Czinke Attila e.v.
 </footer>
 
-<a href="tel:+36501267123" class="floating-call">📞</a>
+<a href="tel:+36501267123" class="floating-call" aria-label="Hívás">📞</a>
 
 <script>
-const imgs=document.querySelectorAll('.gallery-img');
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=document.getElementById('lightboxImg');
-const closeBtn=document.querySelector('.lightbox-close');
+  // Lightbox
+  const imgs = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.querySelector('.lightbox-close');
 
-imgs.forEach(img=>{
-img.addEventListener('click',()=>{
-lightboxImg.src=img.src;
-lightbox.classList.add('open');
-});
-});
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Nagyított kép';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
 
-closeBtn.addEventListener('click',()=>lightbox.classList.remove('open'));
-lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open');});
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach(img => img.addEventListener('click', () => openLightbox(img.src, img.alt)));
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
 </script>
 
 </body>
