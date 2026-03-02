@@ -20,6 +20,11 @@
   <meta name="language" content="hu">
   <meta name="author" content="Czinke Attila e.v.">
 
+  <!-- ✅ HOZZÁADVA: Google Search Console ellenőrzés (tedd bele a saját kódod!) -->
+  <!-- A Search Console ad egy ilyet: <meta name="google-site-verification" content="..."> -->
+  <meta name="google-site-verification" content="IDE_JON_A_SEARCH_CONSOLE_KODOD">
+  <!-- ✅ /HOZZÁADVA -->
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
@@ -149,6 +154,29 @@
     */
   }
   </script>
+
+  <!-- ✅ HOZZÁADVA: Biztosan valid JSON-LD (a fenti scriptben van komment, ami JSON-ban technikailag nem valid) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://slendydubbiz.github.io/minden-ami-ontozes/#localbusiness-valid",
+    "name": "Czinke Attila e.v.",
+    "url": "https://slendydubbiz.github.io/minden-ami-ontozes/",
+    "image": "https://slendydubbiz.github.io/minden-ami-ontozes/logo.png",
+    "telephone": ["+36501267123", "+36306850053"],
+    "email": "czinke.attila79@gmail.com",
+    "description": "Öntözőrendszer telepítés és kertkarbantartás Nyíregyházán és környékén.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Fazekas János tér 10 10/82",
+      "addressLocality": "Nyíregyháza",
+      "addressCountry": "HU"
+    },
+    "areaServed": "Nyíregyháza és környéke"
+  }
+  </script>
+  <!-- ✅ /HOZZÁADVA -->
 
   <style>
     body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#f5f5f5;}
@@ -296,7 +324,37 @@
 
 <a href="tel:+36501267123" class="floating-call" aria-label="Hívás">📞</a>
 
+<!-- ✅ HOZZÁADVA: GA4 események - tel: és mailto: kattintás mérése -->
+<script>
+  (function () {
+    function sendGAEvent(name, params){
+      if (typeof gtag === 'function') {
+        gtag('event', name, params || {});
+      }
+    }
+
+    // Minden tel: link kattintás mérése
+    document.addEventListener('click', function(e){
+      const tel = e.target.closest('a[href^="tel:"]');
+      if(tel){
+        sendGAEvent('phone_click', {
+          event_category: 'engagement',
+          event_label: tel.getAttribute('href')
+        });
+      }
+
+      // (opcionális, de hasznos) mailto kattintás mérése
+      const mail = e.target.closest('a[href^="mailto:"]');
+      if(mail){
+        sendGAEvent('email_click', {
+          event_category: 'engagement',
+          event_label: mail.getAttribute('href')
+        });
+      }
+    });
+  })();
+</script>
+<!-- ✅ /HOZZÁADVA -->
+
 </body>
 </html>
-
-
