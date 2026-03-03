@@ -219,6 +219,43 @@
       70%{box-shadow:0 0 0 18px rgba(46,125,50,0);}
       100%{box-shadow:0 0 0 0 rgba(46,125,50,0);}
     }
+
+    /* ✅ HOZZÁADVA: Kisebb fejléc + logo bal oldalon (semmi nem lett kivéve) */
+    header{
+      padding:10px 14px;                 /* kisebb magasság */
+      text-align:left;                   /* balra igazítás */
+      display:flex;                      /* logo + szöveg egymás mellett */
+      align-items:center;                /* középre igaz függőlegesen */
+      gap:12px;                          /* kis térköz */
+      min-height:64px;                   /* kb 1-2 cm hatás (képernyőtől függ) */
+    }
+    header img{
+      width:64px;                        /* kisebb logo */
+      height:64px;                       /* fix magasság */
+      max-width:none;                    /* felülírjuk a régi max-width-ot */
+      margin:0;                          /* ne legyen középre tolás */
+      display:block;
+      flex:0 0 64px;
+    }
+    header h2{
+      margin:0;
+      font-size:18px;
+      line-height:1.1;
+    }
+    header p{
+      margin:2px 0 0 0;
+      font-size:13px;
+      line-height:1.2;
+      opacity:.95;
+    }
+    /* mobilon is maradjon kompakt */
+    @media (max-width:480px){
+      header{gap:10px; min-height:60px;}
+      header img{width:56px;height:56px;flex:0 0 56px;}
+      header h2{font-size:16px;}
+      header p{font-size:12px;}
+    }
+    /* ✅ /HOZZÁADVA */
   </style>
 </head>
 
@@ -226,8 +263,10 @@
 
 <header>
   <img src="logo.png" alt="Logo" width="220" height="220" decoding="async" fetchpriority="high">
-  <h2>Czinke Attila e.v.</h2>
-  <p>Öntözőrendszer kivitelezés/telepítés • Kert építés/karbantartás • Nyíregyházán és környékén</p>
+  <div>
+    <h2>Czinke Attila e.v.</h2>
+    <p>Öntözőrendszer kivitelezés/telepítés • Kert építés/karbantartás • Nyíregyházán és környékén</p>
+  </div>
 </header>
 
 <nav>
@@ -357,8 +396,3 @@
 
 </body>
 </html>
-
-
-
-
-
