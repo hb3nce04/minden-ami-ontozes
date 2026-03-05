@@ -243,18 +243,18 @@
 
     /* ✅ HOZZÁADVA: Kisebb fejléc + logo bal oldalon (semmi nem lett kivéve) */
     header{
-      padding:10px 14px;                 /* kisebb magasság */
-      text-align:left;                   /* balra igazítás */
-      display:flex;                      /* logo + szöveg egymás mellett */
-      align-items:center;                /* középre igaz függőlegesen */
-      gap:12px;                          /* kis térköz */
-      min-height:64px;                   /* kb 1-2 cm hatás (képernyőtől függ) */
+      padding:10px 14px;
+      text-align:left;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-height:64px;
       box-sizing:border-box;
     }
     header img{
-      width:64px;                        /* kisebb logo */
-      height:64px;                       /* fix magasság */
-      margin:0;                          /* ne legyen középre tolás */
+      width:64px;
+      height:64px;
+      margin:0;
       flex:0 0 64px;
     }
     header h2{
@@ -333,8 +333,11 @@
     }
     /* ✅ /HOZZÁADVA */
 
-    /* ✅ HOZZÁADVA: Referencia nyilas lenyitás (képek csak nyitás után) */
-    #referenciak{ display:none; } /* alapból elrejtjük, és lenyitáskor megjelenítjük */
+    /* ✅ HOZZÁADVA: Referencia nyilas lenyitás */
+    /* FONTOS JAVÍTÁS:
+       EDDIG az volt a gond, hogy a #referenciak mindig display:none maradt.
+       Most megtartjuk az elrejtést, DE a képeket ténylegesen betesszük a details-be, így biztosan működik. */
+    #referenciak{ display:none; } /* megmarad, nem törlünk semmit */
 
     details.refbox{
       margin-top:22px;
@@ -366,10 +369,17 @@
     details.refbox[open] > summary::before{
       content:"▾";
     }
-    /* ✅ /HOZZÁADVA */
 
-    /* ✅ HOZZÁADVA: JAVÍTÁS – akkor is jelenjen meg a referencia szekció, ha a JS valamiért nem fut le */
-    #refToggle[open] + #referenciak{ display:block; }
+    /* ✅ HOZZÁADVA: A refbox belső tartalma (ide fogjuk áttenni a szekciót JS-sel) */
+    #refContent{
+      padding: 0 0 18px;
+    }
+    details.refbox #referenciak{
+      display:block;       /* ha már a details-be kerül, itt mindig látszik */
+      margin-top:0;        /* ne legyen dupla tér */
+      box-shadow:none;     /* ne legyen dupla kártya-hatás */
+      border-radius:0;
+    }
     /* ✅ /HOZZÁADVA */
   </style>
 </head>
@@ -422,11 +432,15 @@
           <p>Tapasztalatunkkal és ügyfélközpontú hozzáállásunkkal arra törekszünk, hogy a kert ne gond legyen, hanem öröm: <strong>egy igényes, élhető zöld tér</strong>, amit jó használni és jó ránézni.</p>
         </div>
       </details>
+      <!-- ✅ /HOZZÁADVA -->
     </div>
 
-    <!-- ✅ HOZZÁADVA: Referencia lenyitható sor (a képek csak nyitás után jelennek meg) -->
+    <!-- ✅ HOZZÁADVA: Referencia lenyitható doboz – IDE FOG BEKERÜLNI A TELJES REFERENCIA SZEKCIÓ -->
     <details class="refbox" id="refToggle">
       <summary>Referencia képek megtekintéséhez nyomja meg a nyilat</summary>
+      <!-- ✅ HOZZÁADVA: ide mozgatjuk át a referenciákat, így biztosan lenyílik -->
+      <div id="refContent"></div>
+      <!-- ✅ /HOZZÁADVA -->
     </details>
     <!-- ✅ /HOZZÁADVA -->
 
@@ -741,19 +755,26 @@
     })();
   </script>
 
-  <!-- ✅ HOZZÁADVA: Referenciák csak lenyitás után (nem vettünk ki semmit, csak vezérlés) -->
+  <!-- ✅ HOZZÁADVA: REFERENCIA JAVÍTÁS – a teljes #referenciak szekciót betesszük a details-be, így biztosan lenyílik -->
   <script>
     (function(){
       const toggle = document.getElementById('refToggle');
+      const holder = document.getElementById('refContent');
       const section = document.getElementById('referenciak');
-      if(!toggle || !section) return;
+      if(!toggle || !holder || !section) return;
 
-      function sync(){
-        section.style.display = toggle.open ? '' : 'none';
+      // áthelyezzük a referenciákat a lenyitható dobozba
+      holder.appendChild(section);
+
+      // ha valaki mégis linkkel ugrana ide: biztos legyen látható a details-ben
+      // (nem kötelező, de stabil)
+      function ensureOpenIfHash(){
+        if(location.hash === '#referenciak'){
+          toggle.open = true;
+        }
       }
-
-      toggle.addEventListener('toggle', sync);
-      sync();
+      window.addEventListener('hashchange', ensureOpenIfHash);
+      ensureOpenIfHash();
     })();
   </script>
   <!-- ✅ /HOZZÁADVA -->
