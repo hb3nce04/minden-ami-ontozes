@@ -578,7 +578,7 @@
         </summary>
 
         <div class="details-body">
-          <p class="calc-help"><strong>Fix díjak:</strong> alap kiszállási díj 15 000 Ft, kilométerdíj 200 Ft/km.</p>
+          <p class="calc-help"><strong>Fix díjak:</strong> alap kiszállási díj 15 000 Ft, oda-vissza ár 200 Ft/km.</p>
 
           <div class="calc-box">
             <div class="calc-grid">
@@ -612,7 +612,7 @@
               </div>
 
               <div class="calc-field">
-                <label for="kmPrice">Km díj (Ft/km)</label>
+                <label for="kmPrice">Oda-vissza ár (Ft/km)</label>
                 <input type="number" id="kmPrice" min="0" value="200" readonly class="calc-fixed" />
               </div>
 
@@ -628,7 +628,15 @@
                 <strong id="weldTotal">0 Ft</strong>
               </div>
               <div class="calc-row">
-                <span>Kiszállási díj:</span>
+                <span>Alap kiszállási díj:</span>
+                <strong id="baseTravelTotal">0 Ft</strong>
+              </div>
+              <div class="calc-row">
+                <span>Oda-vissza út díja:</span>
+                <strong id="distanceTravelTotal">0 Ft</strong>
+              </div>
+              <div class="calc-row">
+                <span>Kiszállási díj összesen:</span>
                 <strong id="travelTotal">0 Ft</strong>
               </div>
               <div class="calc-row calc-final">
@@ -870,6 +878,8 @@
       const minCallout = document.getElementById('minCallout');
 
       const weldTotal = document.getElementById('weldTotal');
+      const baseTravelTotal = document.getElementById('baseTravelTotal');
+      const distanceTravelTotal = document.getElementById('distanceTravelTotal');
       const travelTotal = document.getElementById('travelTotal');
       const grandTotal = document.getElementById('grandTotal');
 
@@ -888,14 +898,18 @@
         const minTravel = 15000;
 
         const welding = unitPrice * pieces;
-        const travelByKm = km * kmRate;
-        const travel = km > 0 ? Math.max(travelByKm, minTravel) : 0;
+        const roundTripKm = km * 2;
+        const distanceCost = roundTripKm * kmRate;
+        const baseTravel = km > 0 ? minTravel : 0;
+        const travel = km > 0 ? (baseTravel + distanceCost) : 0;
         const total = welding + travel;
 
         kmPrice.value = kmRate;
         minCallout.value = minTravel;
 
         weldTotal.textContent = formatFt(welding);
+        baseTravelTotal.textContent = formatFt(baseTravel);
+        distanceTravelTotal.textContent = formatFt(distanceCost);
         travelTotal.textContent = formatFt(travel);
         grandTotal.textContent = formatFt(total);
       }
