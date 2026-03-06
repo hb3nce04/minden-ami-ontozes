@@ -395,6 +395,10 @@
       border-top:1px solid rgba(0,0,0,.06);
     }
     /* ✅ /HOZZÁADVA */
+
+    /* ✅ HOZZÁADVA: Finom görgetés a lenyitható részekhez (csak plusz, nem vesz el semmit) */
+    html{ scroll-behavior:smooth; }
+    /* ✅ /HOZZÁADVA */
   </style>
 </head>
 
@@ -478,8 +482,8 @@
     </div>
 
     <section class="section" id="referenciak">
-      <!-- ✅ HOZZÁADVA: A fotók lenyitható fülbe kerültek (a galéria és minden eleme megmaradt) -->
-      <details open>
+      <!-- ✅ HOZZÁADVA: A fotók lenyitható fülben vannak, és ALAPBÓL ZÁRVA (open eltávolítása nélkül, JS-sel bezárjuk) -->
+      <details open id="refsDetails">
         <summary>
           <span>Referenciamunkák – Mezőgazdasági öntözés (8 kép)</span>
           <span class="sum-icon">⌄</span>
@@ -679,6 +683,20 @@
       });
 
       onScroll();
+    })();
+  </script>
+  <!-- ✅ /HOZZÁADVA -->
+
+  <!-- ✅ HOZZÁADVA: Referenciák alapból ZÁRVA (open attribútumot nem törlünk, csak induláskor bezárjuk JS-sel) -->
+  <script>
+    (function(){
+      const refs = document.getElementById('refsDetails');
+      if(!refs) return;
+      // induláskor zárjuk be, de a felhasználó bármikor lenyithatja
+      // (nem veszünk ki semmit a HTML-ből, csak viselkedést adunk hozzá)
+      window.addEventListener('DOMContentLoaded', function(){
+        refs.open = false;
+      });
     })();
   </script>
   <!-- ✅ /HOZZÁADVA -->
