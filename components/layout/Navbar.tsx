@@ -1,7 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import {ReactNode, useState} from 'react';
 import Link from 'next/link';
+
+export const LINKS = [
+    { href: "/", label: "Főoldal" },
+    { href: "/ontozorendszer", label: "Öntözőrendszer" },
+    { href: "/kertkarbantartas", label: "Kertkarbantartás" },
+    { href: "/zoldfal", label: "Zöldfal" },
+    { href: "/mezogazdasagi-ontozes", label: "Mezőgazdasági öntözőrendszer" },
+    { href: "#idopont", label: "Időpontfoglalás" },
+    { href: "#kapcsolat", label: "Kapcsolat" },
+];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,19 +35,18 @@ export default function Navbar() {
                 md:flex md:grid-rows-none w-full md:w-auto
             `}>
                 <div className="overflow-hidden flex flex-col md:flex md:flex-row md:overflow-visible items-center">
-                    <NavLink href="/ontozorendszer">Öntözőrendszer</NavLink>
-                    <NavLink href="/kertkarbantartas">Kertkarbantartás</NavLink>
-                    <NavLink href="/zoldfal">Zöldfal</NavLink>
-                    <NavLink href="/mezogazdasagi-ontozes">Mezőgazdasági öntözőrendszer</NavLink>
-                    <NavLink href="#idopont">Időpontfoglalás</NavLink>
-                    <NavLink href="#kapcsolat">Kapcsolat</NavLink>
+                    {LINKS.map((link) => (
+                        <NavLink key={link.href} href={link.href}>
+                            {link.label}
+                        </NavLink>
+                    ))}
                 </div>
             </div>
         </nav>
     );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
     return (
         <Link
             href={href}
