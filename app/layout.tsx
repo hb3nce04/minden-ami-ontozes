@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
+import FloatingCall from "@/components/layout/FloatingCall";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header/>
         <Navbar/>
-        {children}
+        <main>
+          {children}
+        </main>
+        <FloatingCall />
       </body>
     </html>
   );

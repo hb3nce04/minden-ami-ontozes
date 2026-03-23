@@ -8,7 +8,6 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 flex flex-col md:flex-row items-stretch justify-center bg-[var(--green)] shadow-md">
-
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex w-full items-center justify-between px-4 py-3 text-white md:hidden focus:outline-none"
